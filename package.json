@@ -1,1 +1,11 @@
-{"name":"bus-landing","version":"1.0.0","private":true,"scripts":{"start":"node server.js"},"engines":{"node":">=18"}}
+{
+  "name": "intl-bus-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Односторінковий сайт міжнародних перевезень Україна — Європа",
+  "scripts": {
+    "test": "node test/lead.test.js",
+    "preview": "node preview.js",
+    "preview:dry": "node preview.js --dry"
+  }
+}

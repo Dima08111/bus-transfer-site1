@@ -1,218 +1,260 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Автобусні перевезення Україна — Європа</title>
-<meta name="description" content="Комфортні автобусні перевезення Україна — Європа. Залиште заявку, і ми зателефонуємо.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--navy:#0d2342;--navy2:#16355f;--graph:#2a2f37;--bg:#f5f7fa;--line:#dde3ec;--white:#fff;--sign:#f4b81f;--ink:#1b2430;
- --safe-b:env(safe-area-inset-bottom,0px)}
-*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{font-family:Manrope,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
-img{max-width:100%;display:block}a{color:inherit}
-.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-section{padding:72px 0}
-h1,h2,h3{line-height:1.15;color:var(--navy)}
-h2{font-size:clamp(26px,4vw,38px);margin-bottom:12px;font-weight:800}
-.lead{color:#52607a;max-width:60ch;margin-bottom:36px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 28px;border-radius:10px;font:700 16px Manrope,sans-serif;border:0;cursor:pointer;text-decoration:none;transition:transform .15s,background .15s}
-.btn:active{transform:scale(.97)}
-.btn-main{background:var(--sign);color:#1a1a1a}.btn-main:hover{background:#ffc93d}
-.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5)}.btn-ghost:hover{background:rgba(255,255,255,.12)}
-.btn-line{background:#fff;border:2px solid var(--line);color:var(--navy)}.btn-line:hover{border-color:var(--navy)}
-:focus-visible{outline:3px solid var(--sign);outline-offset:2px}
-/* header */
-header{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.logo{font-weight:800;font-size:19px;text-decoration:none;display:flex;gap:10px;align-items:center}
-.logo i{width:30px;height:20px;border-radius:5px;background:var(--sign);display:block;position:relative}
-.logo i::after{content:"";position:absolute;left:4px;right:4px;top:4px;height:6px;background:var(--navy);border-radius:2px}
-nav{display:flex;gap:22px}nav a{text-decoration:none;font-weight:500;font-size:15px;opacity:.85}nav a:hover{opacity:1}
-.tel{font-weight:700;text-decoration:none;white-space:nowrap}
-@media(max-width:820px){nav{display:none}.logo span{font-size:13px;line-height:1.2;max-width:170px}}
-/* hero */
-.hero{position:relative;color:#fff;background:var(--navy) url(img/hero.jpg) center/cover;isolation:isolate;padding:110px 0 120px}
-.hero::before{content:'';position:absolute;inset:0;background:rgba(13,35,66,.68);z-index:-1}
-.hero h1{color:#fff;font-size:clamp(34px,6vw,60px);font-weight:800;max-width:15ch;margin-bottom:18px}
-.hero p{font-size:19px;max-width:48ch;opacity:.9;margin-bottom:32px}
-.hero .row{display:flex;gap:14px;flex-wrap:wrap}
-/* about + perks */
-.about{background:var(--bg)}
-.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
-.photo{border-radius:14px;width:100%;height:340px;object-fit:cover}
-@media(max-width:820px){.about-grid{grid-template-columns:1fr}}
-.perks{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;border-top:3px solid var(--navy)}
-.perk{padding:24px 24px 24px 0}.perk h3{font-size:19px;margin-bottom:6px}.perk p{color:#52607a;font-size:15px}
-/* gallery */
-.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:10px}
-.gal img{width:100%;height:100%;object-fit:cover;border-radius:10px}
-.gal img:nth-child(1){grid-column:span 2;grid-row:span 2}
-@media(max-width:700px){.gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:130px}}
-/* destinations */
-.dest{background:var(--navy);color:#fff}.dest h2{color:#fff}.dest .lead{color:#b9c6dc}
-.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
-.dgrid button{font:700 17px Manrope,sans-serif;text-align:left;color:#fff;background:var(--navy2);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:20px;cursor:pointer;transition:background .15s}
-.dgrid button:hover{background:#1d4476}.dgrid small{display:block;font-weight:400;color:#b9c6dc;margin-top:4px;font-size:13px}
-/* reviews */
-.rev-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
-.arrows{display:flex;gap:8px;margin-bottom:36px}.arrows button{width:46px;height:46px;border-radius:50%;border:2px solid var(--line);background:#fff;font-size:20px;cursor:pointer;color:var(--navy)}
-.arrows button:hover{border-color:var(--navy)}
-.track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:none}.track::-webkit-scrollbar{display:none}
-.card{flex:0 0 min(340px,85%);scroll-snap-align:start;border:1px solid var(--line);border-radius:12px;padding:22px;background:#fff}
-.stars{color:var(--sign);letter-spacing:2px;margin-bottom:8px}.card p{font-size:15px;color:#3b475c;margin-bottom:14px}.card b{color:var(--navy)}
-.note{font-size:13px;color:#8a95a8}
-/* form */
-.order{background:var(--bg)}
-.formbox{max-width:760px;margin:0 auto;background:#fff;border-radius:16px;padding:34px;box-shadow:0 12px 40px rgba(13,35,66,.12)}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:640px){.grid2{grid-template-columns:1fr}.formbox{padding:22px}}
-label{display:block;font-weight:700;font-size:14px;color:var(--navy);margin-bottom:6px}
-input,select{width:100%;padding:14px;border:2px solid var(--line);border-radius:10px;font:500 16px Manrope,sans-serif;background:#fff;color:var(--ink)}
-input:focus,select:focus{border-color:var(--navy);outline:0}
-.fld{margin-bottom:16px}.fld select+select{margin-top:8px}
-.err{color:#b3261e;font-size:14px;min-height:20px;margin:4px 0 12px}
-.hp{position:absolute;left:-9999px}
-.ok{text-align:center;padding:30px 10px}.ok h3{font-size:26px;margin-bottom:10px}
-/* contacts */
-.cgrid{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
-.big{background:var(--graph);color:#fff;text-align:center}.big h2{color:#fff}
-footer{background:#10151c;color:#9aa6b8;padding:30px 0 90px;font-size:14px}footer a{color:#fff}
-/* floating */
-.fab{position:fixed;right:16px;bottom:calc(16px + var(--safe-b));z-index:60;display:flex;flex-direction:column;gap:10px}
-.fab a{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:24px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.3)}
-.fab .c{background:#1a9b4b}.fab .v{background:#7360f2}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
-</style>
+<title>Міжнародні перевезення Україна — Європа | Замовити поїздку</title>
+<meta name="description" content="Міжнародні пасажирські перевезення Україна — вся Європа та Європа — Україна. Комфортні автобуси, зручне бронювання, підтримка пасажирів. Залиште заявку онлайн.">
+<meta name="theme-color" content="#0b1f3a">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:title" content="Міжнародні перевезення Україна — вся Європа">
+<meta property="og:description" content="Комфортні подорожі до країн Європи. Зручне бронювання та підтримка пасажирів.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1f3a'/%3E%3Cpath d='M12 22h40v20H12z' fill='%23ff7a1a'/%3E%3Ccircle cx='22' cy='46' r='5' fill='%23fff'/%3E%3Ccircle cx='42' cy='46' r='5' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TravelAgency","name":"Міжнародні пасажирські перевезення Україна — Європа","telephone":"+380975098710","areaServed":["UA","Europe"],"description":"Пасажирські перевезення з України до країн Європи та з Європи в Україну."}
+</script>
 </head>
 <body>
-<header><div class="wrap">
- <a class="logo" href="#top"><i></i><span>Автобусні перевезення Україна — Європа</span></a>
- <nav><a href="#about">Про нас</a><a href="#perks">Переваги</a><a href="#routes">Напрямки</a><a href="#reviews">Відгуки</a><a href="#contacts">Контакти</a></nav>
- <a class="tel" href="tel:+380975098710">+380 97 509 87 10</a>
-</div></header>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="logo" href="#top" aria-label="На початок">
+      <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#ff7a1a"/><path d="M12 20h40a2 2 0 0 1 2 2v18H10V22a2 2 0 0 1 2-2z" fill="#0b1f3a"/><rect x="15" y="25" width="10" height="8" rx="1.5" fill="#fff"/><rect x="28" y="25" width="10" height="8" rx="1.5" fill="#fff"/><rect x="41" y="25" width="8" height="8" rx="1.5" fill="#fff"/><circle cx="22" cy="44" r="5" fill="#0b1f3a" stroke="#fff" stroke-width="2"/><circle cx="43" cy="44" r="5" fill="#0b1f3a" stroke="#fff" stroke-width="2"/></svg>
+      <span>UA&nbsp;↔&nbsp;Європа</span>
+    </a>
+    <nav class="nav" aria-label="Меню">
+      <a href="#about">Про нас</a>
+      <a href="#advantages">Переваги</a>
+      <a href="#contacts">Контакти</a>
+    </nav>
+    <a class="top__tel" href="tel:+380975098710">+380 97 509 87 10</a>
+  </div>
+</header>
 
 <main id="top">
-<section class="hero"><div class="wrap">
- <h1>Комфортні автобусні перевезення Україна — Європа</h1>
- <p>Залиште заявку: вкажіть маршрут і дату виїзду, а ми зателефонуємо та підтвердимо поїздку.</p>
- <div class="row"><a class="btn btn-main go" href="#order">Замовити квиток</a><a class="btn btn-ghost" href="tel:+380975098710">Зателефонувати</a></div>
-</div></section>
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true">
+      <img src="img/bus.jpg" alt="Туристичний автобус на європейській трасі" class="hero__photo" width="1920" height="1080" fetchpriority="high" onerror="this.remove()" onload="this.closest('.hero').classList.add('has-photo')">
+      <svg class="hero__bus" viewBox="0 0 800 300" role="img" aria-label="Туристичний автобус">
+        <defs>
+          <linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#cfd8e6"/></linearGradient>
+          <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d3b66"/><stop offset="1" stop-color="#0b1f3a"/></linearGradient>
+        </defs>
+        <ellipse cx="400" cy="272" rx="360" ry="14" fill="#000" opacity=".35"/>
+        <path d="M40 90a30 30 0 0 1 30-30h560c70 0 100 40 110 90l10 70a14 14 0 0 1-14 16H60a20 20 0 0 1-20-20z" fill="url(#body)"/>
+        <path d="M60 80h560c52 0 82 30 92 62H60z" fill="url(#glass)"/>
+        <g fill="#0b1f3a" opacity=".55"><rect x="150" y="80" width="4" height="62"/><rect x="260" y="80" width="4" height="62"/><rect x="370" y="80" width="4" height="62"/><rect x="480" y="80" width="4" height="62"/><rect x="590" y="80" width="4" height="62"/></g>
+        <rect x="40" y="170" width="725" height="14" fill="#ff7a1a"/>
+        <rect x="40" y="184" width="725" height="6" fill="#0b1f3a"/>
+        <g fill="#111827"><circle cx="190" cy="244" r="36"/><circle cx="600" cy="244" r="36"/></g>
+        <g fill="#9aa5b5"><circle cx="190" cy="244" r="18"/><circle cx="600" cy="244" r="18"/></g>
+        <rect x="738" y="150" width="24" height="12" rx="4" fill="#ffd9b8"/>
+      </svg>
+    </div>
+    <div class="wrap hero__in">
+      <p class="eyebrow">Пасажирські перевезення</p>
+      <h1>Міжнародні перевезення Україна — вся Європа</h1>
+      <p class="lead">Комфортні подорожі до країн Європи. Зручне бронювання та підтримка пасажирів.</p>
+      <div class="btns">
+        <a class="btn btn--primary" href="#order" id="btn-order">ЗАМОВИТИ ПОЇЗДКУ</a>
+        <a class="btn btn--ghost" href="tel:+380975098710" id="btn-call">ЗАТЕЛЕФОНУВАТИ</a>
+      </div>
+      <ul class="hero__facts">
+        <li>Україна → Європа</li>
+        <li>Європа → Україна</li>
+        <li>Заявка за 1 хвилину</li>
+      </ul>
+    </div>
+  </section>
 
-<section class="about" id="about"><div class="wrap about-grid">
- <div><h2>Про компанію</h2>
-  <p class="lead" style="margin-bottom:0">Ми возимо пасажирів з України до країн Європи та назад. Опишіть маршрут у заявці, і менеджер підбере відправлення та підтвердить умови поїздки по телефону.</p>
-  <!-- ЗАМІНІТЬ цей текст на справжню інформацію: рік заснування, парк автобусів, ліцензії тощо -->
- </div>
- <img class="photo" id="aboutImg" src="img/about.jpg" alt="Туристичний автобус на європейській дорозі" loading="lazy">
-</div></section>
+  <section class="order" id="order">
+    <div class="wrap">
+      <div class="card">
+        <h2>Замовити поїздку</h2>
+        <p class="muted">Заповніть форму — менеджер зв'яжеться з вами найближчим часом.</p>
 
-<section id="perks"><div class="wrap"><h2>Наші переваги</h2><p class="lead">Те, що важливо в дорозі.</p>
-<div class="perks">
- <div class="perk"><h3>Комфортні салони</h3><p>Зручні крісла та простір для ніг на довгій дорозі.</p></div>
- <div class="perk"><h3>Прості умови</h3><p>Одна заявка замість довгого оформлення. Решту уточнимо по телефону.</p></div>
- <div class="perk"><h3>Популярні напрямки</h3><p>Польща, Німеччина, Чехія, Австрія, Нідерланди, Бельгія.</p></div>
- <div class="perk"><h3>Швидкий зворотний зв'язок</h3><p>Телефон, Viber і Telegram: оберіть, як вам зручніше.</p></div>
-</div></div></section>
+        <form id="lead-form" novalidate autocomplete="on">
+          <p class="route-hint">Напрямок: з України до Європи або з Європи в Україну. Друга країна підставиться автоматично.</p>
+          <div class="route">
+            <fieldset class="side">
+              <legend>Звідки</legend>
+              <label for="fromCountry">Країна відправлення</label>
+              <select id="fromCountry" name="fromCountry" required></select>
+              <label for="fromCitySel">Місто відправлення</label>
+              <select id="fromCitySel" required></select>
+              <input id="fromCityTxt" name="fromCityTxt" type="text" maxlength="80" placeholder="Впишіть місто" hidden>
+              <p class="err" data-for="fromCity"></p>
+            </fieldset>
 
-<section id="gallery" style="padding-top:0"><div class="wrap"><h2>Автобуси та салони</h2><p class="lead">Наші автобуси, салони та маршрути.</p>
-<div class="gal" id="gal"></div>
-</div></section>
+            <button type="button" class="swap" id="swap" aria-label="Поміняти напрямки місцями" title="Поміняти місцями">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4 3 8l4 4"/><path d="M3 8h14"/><path d="m17 20 4-4-4-4"/><path d="M21 16H7"/></svg>
+            </button>
 
-<section class="dest" id="routes"><div class="wrap"><h2>Популярні напрямки</h2><p class="lead">Натисніть на країну, і вона підставиться у форму.</p>
-<div class="dgrid" id="dgrid"></div></div></section>
+            <fieldset class="side">
+              <legend>Куди</legend>
+              <label for="toCountry">Країна прибуття</label>
+              <select id="toCountry" name="toCountry" required></select>
+              <label for="toCitySel">Місто прибуття</label>
+              <select id="toCitySel" required></select>
+              <input id="toCityTxt" name="toCityTxt" type="text" maxlength="80" placeholder="Впишіть місто" hidden>
+              <p class="err" data-for="toCity"></p>
+            </fieldset>
+          </div>
 
-<section id="reviews"><div class="wrap">
- <div class="rev-head"><div><h2>Відгуки клієнтів</h2><p class="note" style="margin-bottom:24px">Демонстраційні відгуки: замініть на справжні перед запуском реклами.</p></div>
- <div class="arrows"><button id="prev" aria-label="Назад">←</button><button id="next" aria-label="Далі">→</button></div></div>
- <div class="track" id="track"></div>
-</div></section>
+          <div class="grid2">
+            <div>
+              <label for="date">Дата поїздки</label>
+              <input id="date" name="date" type="date" required>
+              <p class="err" data-for="date"></p>
+            </div>
+            <div>
+              <label for="passengers">Кількість пасажирів</label>
+              <select id="passengers" name="passengers" required></select>
+              <p class="err" data-for="passengers"></p>
+            </div>
+            <div>
+              <label for="name">Ім'я</label>
+              <input id="name" name="name" type="text" maxlength="80" autocomplete="name" placeholder="Як до вас звертатись" required>
+              <p class="err" data-for="name"></p>
+            </div>
+            <div>
+              <label for="phone">Номер телефону</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" maxlength="25" autocomplete="tel" placeholder="+380 __ ___ __ __" required>
+              <p class="err" data-for="phone"></p>
+            </div>
+          </div>
 
-<section class="order" id="order"><div class="wrap"><div class="formbox">
- <h2 style="text-align:center">Замовити квиток</h2><p class="lead" style="margin:0 auto 24px;text-align:center">Шість полів, одна хвилина.</p>
- <form id="f" novalidate>
-  <div class="grid2">
-   <div class="fld"><label for="fc">Звідки їдете?</label><select id="fc" required></select><select id="ft" required></select></div>
-   <div class="fld"><label for="tc">Куди їдете?</label><select id="tc" required></select><select id="tt" required></select></div>
-  </div>
-  <div class="grid2">
-   <div class="fld"><label for="date">Дата виїзду</label><input id="date" type="date" required></div>
-   <div class="fld"><label for="pax">Кількість пасажирів</label><input id="pax" type="number" min="1" max="50" value="1" inputmode="numeric" required></div>
-  </div>
-  <div class="grid2">
-   <div class="fld"><label for="name">Ім'я та прізвище</label><input id="name" autocomplete="name" required></div>
-   <div class="fld"><label for="phone">Номер телефону</label><input id="phone" type="tel" autocomplete="tel" placeholder="+380..." inputmode="tel" required></div>
-  </div>
-  <input class="hp" name="website" id="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-  <div class="err" id="err" role="alert"></div>
-  <button class="btn btn-main" style="width:100%;font-size:18px" id="sub" type="submit">НАДІСЛАТИ ЗАЯВКУ</button>
- </form>
- <div class="ok" id="ok" hidden><h3>Дякуємо!</h3><p>Ваша заявка прийнята. Найближчим часом ми зв'яжемося з вами.</p></div>
-</div></div></section>
+          <!-- Антиспам: приховане поле-пастка (люди його не бачать) -->
+          <div class="hp" aria-hidden="true"><label>Не заповнюйте <input type="text" name="website" id="website" tabindex="-1" autocomplete="off"></label></div>
 
-<section id="contacts"><div class="wrap"><h2>Контакти</h2><p class="lead" style="margin-bottom:0">Основний телефон: <b><a href="tel:+380975098710">+380 97 509 87 10</a></b></p>
- <div class="cgrid"><a class="btn btn-main" href="tel:+380975098710">Зателефонувати</a><a class="btn btn-line" href="viber://chat?number=%2B380975098710">Написати у Viber</a><a class="btn btn-line" href="https://t.me/+380975098710" target="_blank" rel="noopener">Telegram</a></div>
-</div></section>
+          <label class="consent">
+            <input type="checkbox" id="consent" required>
+            <span>Я погоджуюсь на обробку моїх персональних даних відповідно до <a href="#privacy" data-open-privacy>Політики конфіденційності</a>.</span>
+          </label>
+          <p class="err" data-for="consent"></p>
 
-<section class="big"><div class="wrap"><h2>Готові їхати?</h2><p style="margin-bottom:24px;opacity:.85">Надішліть заявку, і ми передзвонимо.</p><a class="btn btn-main go" href="#order" style="font-size:19px;padding:18px 40px">Замовити квиток</a></div></section>
+          <button type="submit" class="btn btn--primary btn--block" id="submit">НАДІСЛАТИ ЗАЯВКУ</button>
+
+          <div class="status" id="status" role="status" aria-live="polite" hidden></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about__in">
+      <div>
+        <h2>Про компанію</h2>
+        <p>Ми організовуємо міжнародні пасажирські перевезення за напрямками <strong>Україна — Європа</strong> та <strong>Європа — Україна</strong>. Допомагаємо дістатися до рідних, на роботу, навчання чи у подорож — без зайвих пересадок і клопоту.</p>
+        <p>Ви залишаєте заявку на сайті або телефонуєте, а менеджер уточнює деталі маршруту, час відправлення та вартість і підтримує вас на зв'язку до кінця поїздки.</p>
+        <figure class="photo" data-photo hidden><img src="img/bus2.jpg" alt="Автобус компанії" width="1200" height="800" loading="lazy"></figure>
+      </div>
+      <ul class="points">
+        <li><b>Прозоро.</b> Умови та вартість узгоджуємо до поїздки.</li>
+        <li><b>Зручно.</b> Бронювання через сайт, телефон або месенджери.</li>
+        <li><b>Надійно.</b> Підтримка пасажирів на кожному етапі.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="adv" id="advantages">
+    <div class="wrap">
+      <h2>Наші переваги</h2>
+      <div class="cards">
+        <article class="mini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0"/><path d="M5 12.5a10.5 10.5 0 0 1 14 0"/><path d="M8.5 16a5.5 5.5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1" fill="currentColor"/></svg><h3>Wi-Fi</h3><p>Залишайтесь на зв'язку в дорозі.</p></article>
+        <article class="mini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M4.9 6.5l14.2 11M19.1 6.5 4.9 17.5"/><path d="m9 3.5 3 2.5 3-2.5M9 20.5l3-2.5 3 2.5"/></svg><h3>Кондиціонер</h3><p>Комфортна температура влітку.</p></article>
+        <article class="mini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c2 3 4 4.5 4 8a4 4 0 0 1-8 0c0-1.5.6-2.6 1.4-3.6C9.5 8.5 10 9 10.5 9.5 10.5 7 11 5 12 3z"/><path d="M5 21h14"/></svg><h3>Опалення салону</h3><p>Тепло в холодну пору року.</p></article>
+        <article class="mini"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h4a2 2 0 0 1 2 2v7H7z"/><path d="M5 12h14a1 1 0 0 1 1 1v3H4v-3a1 1 0 0 1 1-1z"/><path d="M6 16v4M18 16v4"/></svg><h3>Комфортні сидіння</h3><p>М'які крісла для довгої дороги.</p></article>
+        <article class="mini"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M12 3v6.5M3.5 14.5 9.8 13M20.5 14.5 14.2 13"/></svg><h3>Досвідчені водії</h3><p>Безпека та акуратне водіння.</p></article>
+        <article class="mini"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M9 8V6a3 3 0 0 1 6 0v2M4 13h16"/></svg><h3>Місце для багажу</h3><p>Місткий багажний відсік.</p></article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Фотогалерея: показується автоматично, коли у public/img лежать файли salon.jpg, comfort.jpg (і за потреби driver.jpg — див. README) -->
+  <section class="gallery" id="gallery" data-needs-photo hidden>
+    <div class="wrap">
+      <h2>Комфорт у дорозі</h2>
+      <div class="gal">
+        <figure class="photo" data-photo hidden><img src="img/salon.jpg" alt="Салон автобуса з комфортними сидіннями" width="1200" height="800" loading="lazy"><figcaption>Просторий салон із комфортними сидіннями</figcaption></figure>
+        <figure class="photo" data-photo hidden><img src="img/comfort.jpg" alt="Пасажирський салон з кондиціонером" width="1200" height="800" loading="lazy"><figcaption>Кондиціонер та комфортні умови</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Відгуки: блок прихований, доки не додано реальні відгуки. Див. README, розділ «Відгуки». -->
+  <section class="reviews" id="reviews" hidden>
+    <div class="wrap">
+      <h2>Відгуки пасажирів</h2>
+      <div class="cards cards--3">
+        <!--
+        <blockquote class="review"><p>Текст реального відгуку</p><footer>— Ім'я, місто</footer></blockquote>
+        -->
+      </div>
+    </div>
+  </section>
+
+  <section class="contacts" id="contacts">
+    <div class="wrap">
+      <h2>Контакти</h2>
+      <p class="phone-big"><a href="tel:+380975098710">+380 97 509 87 10</a></p>
+      <div class="cbtns">
+        <a class="cbtn cbtn--call" href="tel:+380975098710">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          Зателефонувати
+        </a>
+        <a class="cbtn cbtn--viber" id="viber-link" href="viber://chat?number=%2B380975098710" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C7 3 4 5.5 4 10.5c0 2.6.9 4.4 2.5 5.6V20l3.3-2c.7.1 1.4.2 2.2.2 5 0 8-2.5 8-7.7S17 3 12 3z"/><path d="M9 8.5c0 3 2.5 5.5 5.5 5.5l1-1.2-1.6-1-.8.6a4 4 0 0 1-1.7-1.7l.6-.8-1-1.6z"/></svg>
+          Viber
+        </a>
+        <a class="cbtn cbtn--tg" href="https://t.me/+380975098710" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21.5 3.5-19 8 6 2.2L19 6.5l-8.5 8.2.4 5.3 3-3.6 4.6 3.4z"/></svg>
+          Telegram
+        </a>
+      </div>
+      <p class="muted small">Працюємо щодня. Дзвоніть або пишіть у месенджери — відповімо якнайшвидше.</p>
+    </div>
+  </section>
 </main>
 
-<footer><div class="wrap">© <span id="yr"></span> Автобусні перевезення Україна — Європа · <a href="tel:+380975098710">+380 97 509 87 10</a> · <a href="viber://chat?number=%2B380975098710">Viber</a></div></footer>
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span>© <span id="year"></span> Міжнародні перевезення Україна — Європа</span>
+    <span class="foot__links"><a href="#privacy" data-open-privacy>Політика конфіденційності</a><a href="#cookies" id="cookie-settings" hidden>Налаштування cookies</a></span>
+  </div>
+</footer>
 
-<div class="fab"><a class="v" href="viber://chat?number=%2B380975098710" aria-label="Viber">💬</a><a class="c" href="tel:+380975098710" aria-label="Зателефонувати">📞</a></div>
+<div class="cookie" id="cookie-banner" role="dialog" aria-label="Згода на cookies" hidden>
+  <p>Ми використовуємо cookies та Meta Pixel для вимірювання ефективності реклами. Рекламне відстеження вмикається лише за вашою згодою. <a href="#privacy" data-open-privacy>Докладніше</a></p>
+  <div class="cookie__btns">
+    <button type="button" class="btn btn--primary" id="cookie-accept">Прийняти</button>
+    <button type="button" class="btn btn--ghost" id="cookie-reject">Відхилити</button>
+  </div>
+</div>
 
-<script>
-const PIXEL_ID=''; // ← вставте Meta Pixel ID тут
-if(PIXEL_ID){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src='https://connect.facebook.net/en_US/fbevents.js';s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script');fbq('init',PIXEL_ID);fbq('track','PageView');}
+<!-- Швидкі кнопки для смартфонів -->
+<div class="sticky" aria-label="Швидкий зв'язок">
+  <a class="sticky__call" href="tel:+380975098710">Зателефонувати</a>
+  <a class="sticky__order" href="#order">Замовити</a>
+</div>
 
-const C={'Україна':['Київ','Львів','Одеса','Харків','Дніпро','Житомир','Вінниця','Рівне','Луцьк','Тернопіль','Івано-Франківськ','Ужгород','Чернівці','Інше місто'],
-'Польща':['Варшава','Краків','Вроцлав','Познань','Гданськ','Люблін','Катовіце','Лодзь','Інше місто'],
-'Німеччина':['Берлін','Мюнхен','Гамбург','Франкфурт','Кельн','Дрезден','Штутгарт','Інше місто'],
-'Чехія':['Прага','Брно','Острава','Інше місто'],'Австрія':['Відень','Зальцбург','Грац','Інсбрук','Інше місто'],
-'Нідерланди':['Амстердам','Роттердам','Гаага','Утрехт','Інше місто'],'Бельгія':['Брюссель','Антверпен','Гент','Льєж','Інше місто']};
-const $=id=>document.getElementById(id);
-function fill(cSel,tSel,def){cSel.innerHTML=Object.keys(C).map(k=>`<option ${k===def?'selected':''}>${k}</option>`).join('');
- const up=()=>{tSel.innerHTML='<option value="">Оберіть місто</option>'+C[cSel.value].map(c=>`<option>${c}</option>`).join('')};cSel.onchange=up;up();}
-fill($('fc'),$('ft'),'Україна');fill($('tc'),$('tt'),'Польща');
+<dialog id="privacy" class="modal" aria-labelledby="privacy-title">
+  <div class="modal__box">
+    <button type="button" class="modal__close" id="privacy-close" aria-label="Закрити">×</button>
+    <h2 id="privacy-title">Політика конфіденційності</h2>
+    <p><b>1. Які дані ми збираємо.</b> Ім'я, номер телефону, маршрут (країни та міста), дата поїздки та кількість пасажирів — тільки ті, що ви самі вказуєте у формі.</p>
+    <p><b>2. Навіщо.</b> Щоб зв'язатися з вами, уточнити деталі та організувати перевезення. Ми не використовуємо ці дані для інших цілей.</p>
+    <p><b>3. Як передаємо.</b> Заявка надходить менеджерам компанії через захищений канал (месенджер Telegram). Ми не продаємо дані третім особам.</p>
+    <p><b>4. Зберігання.</b> Дані зберігаються не довше, ніж потрібно для виконання заявки та вимог закону. Сайт не створює облікових записів і не ведеться база заявок на сервері сайту.</p>
+    <p><b>5. Cookies та реклама.</b> Сайт може використовувати Meta Pixel для вимірювання ефективності реклами у Facebook та Instagram. Він вмикається лише після вашої згоди у банері cookies і фіксує перегляд сторінки та факт надсилання заявки (без передачі змісту форми). Згоду можна змінити за посиланням «Налаштування cookies» внизу сторінки.</p>
+    <p><b>6. Ваші права.</b> Ви можете попросити доступ до своїх даних, їх виправлення чи видалення, зателефонувавши на +380 97 509 87 10.</p>
+  </div>
+</dialog>
 
-$('dgrid').innerHTML=['Польща','Німеччина','Чехія','Австрія','Нідерланди','Бельгія'].map(c=>`<button type="button" data-c="${c}">${c}<small>Замовити</small></button>`).join('');
-$('dgrid').onclick=e=>{const b=e.target.closest('button');if(!b)return;$('tc').value=b.dataset.c;$('tc').onchange();$('order').scrollIntoView({behavior:'smooth'})};
-document.querySelectorAll('.go').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();$('order').scrollIntoView({behavior:'smooth'})}));
-
-const R=[["Олена К.","Їхала до Кракова. Автобус чистий, водій уважний, їхали без затримок."],["Андрій М.","Зручні крісла, у дорозі добре відпочив. Рекомендую."],["Ірина П.","Менеджер швидко передзвонив і все пояснив. Дуже зручно."],["Сергій Л.","Їздив до Праги, поїздка пройшла спокійно."],["Наталія Б.","Дякую за комфортну поїздку до Берліна!"],["Віктор Д.","Все чітко, без зайвих питань. Поїду ще."],["Марія Т.","Їхали з дитиною, водій був терплячий і привітний."],["Олександр Ш.","Чистий салон, працює кондиціонер, у дорозі було комфортно."],["Юлія Р.","Заявку залишила ввечері, зранку вже зателефонували."],["Дмитро Г.","Автобус приїхав вчасно, без проблем."],["Катерина В.","Їхала до Відня. Дорога була приємною."],["Роман С.","Дуже ввічливий персонал. Дякую."],["Тетяна Ж.","Зручний маршрут, зрозумілі умови."],["Богдан Н.","Другий раз їду з ними, все знову на висоті."],["Оксана Л.","Приємний салон і уважний водій."],["Павло К.","Швидко домовились по телефону, без хвилювань."],["Анна Ф.","Їхали групою, усім було зручно."],["Ігор Ю.","До Амстердама добрались спокійно. Дякую."],["Світлана М.","Відчувала себе в безпеці всю дорогу."],["Максим О.","Рекомендую друзям. Зручно та надійно."]];
-$('track').innerHTML=R.map(r=>`<article class="card"><div class="stars" aria-label="Оцінка 5 з 5">★★★★★</div><p>${r[1]}</p><b>${r[0]}</b></article>`).join('');
-const step=()=>$('track').firstElementChild.offsetWidth+16;
-$('next').onclick=()=>$('track').scrollBy({left:step(),behavior:'smooth'});$('prev').onclick=()=>$('track').scrollBy({left:-step(),behavior:'smooth'});
-
-const d=$('date'),today=new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);d.min=today;d.value=today;
-
-// Фото: показуємо лише ті, що є в папці img/ (порожніх блоків не буде)
-(function(){const alts=['Туристичний автобус на європейській дорозі','Автобус зовні','Салон автобуса','Пасажирські сидіння','Європейське місто','Дорога в Європі'];
- const g=$('gal');let ok=0,left=alts.length;
- const done=()=>{if(--left===0&&!ok)$('gallery').remove()};
- alts.forEach((a,i)=>{const im=new Image();im.alt=a;im.loading='lazy';im.src='img/g'+(i+1)+'.jpg';
-  im.onload=()=>{ok++;g.appendChild(im);done()};im.onerror=done;});
- const ab=$('aboutImg');ab.onerror=()=>{ab.remove();document.querySelector('.about-grid').style.gridTemplateColumns='1fr'};
-})();
-const t0=Date.now();$('yr').textContent=new Date().getFullYear();
-$('f').addEventListener('submit',async e=>{
- e.preventDefault();const er=$('err');er.textContent='';
- const from=`${$('ft').value}, ${$('fc').value}`,to=`${$('tt').value}, ${$('tc').value}`;
- if(!$('ft').value||!$('tt').value)return er.textContent='Оберіть місто відправлення та призначення';
- if($('fc').value===$('tc').value&&$('ft').value===$('tt').value)return er.textContent='Пункти відправлення та призначення збігаються';
- if(!d.value||d.value<today)return er.textContent='Вкажіть коректну дату виїзду';
- const px=+$('pax').value;if(!(px>=1&&px<=50))return er.textContent='Кількість пасажирів: від 1 до 50';
- if($('name').value.trim().length<2)return er.textContent="Вкажіть ім'я та прізвище";
- const ph=$('phone').value.trim();if(ph.replace(/\D/g,'').length<9||!/^\+?[\d\s()\-]{9,18}$/.test(ph))return er.textContent='Вкажіть коректний номер телефону';
- const b=$('sub');b.disabled=true;b.textContent='Надсилаємо…';
- try{
-  const r=await fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({from,to,date:d.value,pax:px,name:$('name').value,phone:ph,website:$('website').value,t:t0})});
-  const j=await r.json();if(!r.ok||!j.ok)throw new Error(j.error||'Помилка');
-  if(window.fbq)fbq('track','Lead');
-  $('f').hidden=true;$('ok').hidden=false;
- }catch(x){er.textContent=(x.message&&x.message!=='Failed to fetch'?x.message:'Не вдалося надіслати. Зателефонуйте нам: +380975098710');b.disabled=false;b.textContent='НАДІСЛАТИ ЗАЯВКУ'}
-});
-</script>
+<script src="data.js" defer></script>
+<script src="app.js" defer></script>
 </body>
 </html>
